@@ -26,7 +26,7 @@ def getURL():
                       'Domain_Age', 'Domain_End', 'iFrame', 'Mouse_Over','Right_Click', 'Web_Forwards']
         data_to_pass_in_the_model = pd.DataFrame(features_url, columns= feature_names)
         print(data_to_pass_in_the_model)
-        XGBoost = pickle.load(open("XGBoostClassifier.pickle", "rb"))
+        XGBoost = pickle.load(open("XGBoostClassifier.pickle.dat", "rb"))
         predicted_value = XGBoost.predict(data_to_pass_in_the_model)
         #print(predicted_value)
         if predicted_value == 0:    
