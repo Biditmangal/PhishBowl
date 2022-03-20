@@ -1,0 +1,36 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(https://fonts.google.com/specimen/Montserrat);
+}
+
+.title{
+    font-family: monospace;
+    font-size: 30px;
+}
+
+.check{
+    font-family: Montserrat;
+    color: #000;
+    font-weight: 600;
+}
+
+.inputText{
+    font-family: monospace;
+    font-weight: 400;
+}
+
+.navText{
+    font-family: Montserrat;
+    font-weight: 600;
+}
+
+.result{
+    font-family: monospace;
+    font-weight: 700;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

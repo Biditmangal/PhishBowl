@@ -1,31 +1,36 @@
-{% extends 'layout.html'%} {% block title %} PhishBowl
-{% endblock title %} {% block body %}
-<div class="jumbotron text-center">
+{% extends 'layout.html'%}
+
+{% block title %}
+PhishBowl
+{% endblock title %}
+
+{% block body %}
+<div class="text-center mt-xxl-5 p-5 d-flex justify-content-center align-items-center mh-100" style="height: 30em;">
 	<center>
-		<h3 style="font-family: Georgia;">PhishBowl - The Phish Catcher</h3>
-
 		<form method="POST" action="{{url_for('getURL')}}">
-			<div class=form-group>
-				<table cellpadding=10 cellspacing=25>
-					<tr>
-						<td><input type=text name="url" placeholder="Enter a url"
-							value="{{request.form.url}}" required size=90 /></td>
-						<td align="center"><input class=btn btn-primary type=submit
-							value="CheckURL" /></td>
-
-					</tr>
-					<tr>
-						<td align="center">{% if error %} {% if error == 'Legitimate'
+			<div class="form-group">
+				<div class="card text-center">
+					<div class="card-body">
+						<div class="input-group input-group-lg mb-3">
+							<span class="input-group-text check" id="inputGroup-sizing-large">URL</span>
+							<input type="text" class="form-control inputText" aria-label="Sizing example input"
+								aria-describedby="inputGroup-sizing-sm" name="url" placeholder="Enter a URL"
+								value="{{request.form.url}}" required size=40>
+							<button class="btn btn-outline-primary fs-5 check" type="submit" id="button-addon2"
+								value="CheckURL">Check</button>
+						</div>
+						<div>
+							{% if error %} {% if error == 'Legitimate'
 							%}
-							<p style="color: green;">
+							<p style="color: green;" class="result">
 								<strong>{{error}}</strong>
 							</p> {% else %}
-							<p style="color: red;">
+							<p style="color: red;" class="result">
 								<strong>{{error}}</strong>
 							</p> {% endif %} {% endif %}
-						</td>
-					</tr>
-				</table>
+						</div>
+					</div>
+				  </div>
 			</div>
 		</form>
 	</center>
